@@ -12,7 +12,7 @@
         <module>module1</module>
         <module>module2</module>
         <module>ElasticSearchTest</module>
+        <module>module3</module>
     </modules>
-
 
 </project>
