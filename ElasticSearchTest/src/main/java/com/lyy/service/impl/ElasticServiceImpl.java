@@ -1,6 +1,6 @@
 package com.lyy.service.impl;
 
-import com.lyy.Dao.ElasticRepository;
+import com.lyy.dao.ElasticRepository;
 import com.lyy.entity.DocBean;
 import com.lyy.service.IElasticService;
 import org.springframework.beans.factory.annotation.Autowired;
