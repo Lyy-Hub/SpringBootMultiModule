@@ -21,6 +21,9 @@ public class ElasticController {
     @Autowired
     private IElasticService elasticService;
 
+    /**
+     * 插入测试数据
+     */
     @GetMapping("/init")
     public void init() {
         elasticService.createIndex();
@@ -29,9 +32,13 @@ public class ElasticController {
         list.add(new DocBean(2L, "XX0210", "XX7475", "xxxxxxxxxx", 1));
         list.add(new DocBean(3L, "XX0257", "XX8097", "xxxxxxxxxxxxxxxxxx", 1));
         elasticService.saveAll(list);
-
     }
 
+    /**
+     * 查询所有
+     *
+     * @return
+     */
     @GetMapping("/all")
     public Iterator<DocBean> all() {
         return elasticService.findAll();
