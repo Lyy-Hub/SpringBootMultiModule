@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.robin.ones.org.robin.ones.gasmanager.mapper.GasFillingRecordMapper">
+<mapper namespace="org.robin.ones.org.zy.ones.manager.mapper.GasFillingRecordMapper">
     <!-- 通用查询映射结果 -->
-    <resultMap id="GasFillingRecordMap" type="org.robin.ones.gasmanager.entity.GasFillingRecordEntity">
+    <resultMap id="GasFillingRecordMap" type="org.zy.ones.manager.entity.GasFillingRecordEntity">
         <id column="id" property="id"/>
         <result column="gpid" property="gpid"/>
         <result column="czdw" property="czdw"/>
