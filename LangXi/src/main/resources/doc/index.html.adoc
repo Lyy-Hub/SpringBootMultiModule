@@ -1,0 +1,59 @@
+package org.robin.ones.gasmanager.controller;
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.extern.slf4j.Slf4j;
+import org.robin.ones.ResponseResult;
+import org.robin.ones.GasFillingRecordCopy;
+import org.robin.ones.GasFillingRecordDto;
+import org.robin.ones.GasFillingRecordService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * 气瓶充装记录管理
+ */
+@RestController
+@RequestMapping("/rest/gasFillingRecord")
+@Slf4j
+@ResponseResult
+public class GasFillingRecordController {
+
+    @Autowired
+    private GasFillingRecordService gasFillingRecordService;
+
+    @Autowired
+    private GasFillingRecordCopy gasFillingRecordCopy;
+
+    /**
+     * 充装记录
+     *
+     * @param pageNum   页码
+     * @param pageSize  每页条数
+     * @param gpid     钢瓶 ID
+     * @param czdw     充装单位
+     * @param czkssj   充装开始时间
+     * @param czjssj   充装结束时间
+     * @param czjz     充装介质
+     * @param czy      充装员
+     * @param jcy      检查员
+     * @return
+     */
+    @GetMapping("/getGasFillingRecordList")
+    public Page<GasFillingRecordDto> getGasFillingRecordList(@RequestParam(name = "pageNum", required = false, defaultValue = "1") int pageNum,
+                                                             @RequestParam(name = "pageSize", required = false, defaultValue = "20") int pageSize,
+                                                             @RequestParam(name = "gpid", required = false) String gpid,
+                                                             @RequestParam(name = "czdw", required = false) String czdw,
+                                                             @RequestParam(name = "czkssj", required = false) String czkssj,
+                                                             @RequestParam(name = "czjssj", required = false) String czjssj,
+                                                             @RequestParam(name = "czjz", required = false) String czjz,
+                                                             @RequestParam(name = "czy", required = false) String czy,
+                                                             @RequestParam(name = "jcy", required = false) String jcy) {
+        return (Page<GasFillingRecordDto>) gasFillingRecordService.getGasFillingRecordList(pageNum, pageSize, gpid, czdw, czkssj,
+                czjssj, czjz, czy, jcy).convert(gasFillingRecordCopy::toDto);
+    }
+
+    /**
+     * 大屏 - 充装记录
+     */
+
+}

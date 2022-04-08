@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/bzgas
+    username: postgres
+    password: root
+
+mybatis-plus:
+  ## 配置控制台 sql 打印
+  #configuration:
+  #  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/**/*.xml
+
+logging:
+  config: classpath:logback.xml

@@ -1,9 +1,0 @@
-spring:
-  data:
-    cassandra:
-      keyspace-name: ZYDX
-      contact-points: 192.168.1.59
-      username: cassandra
-      password: cassandra
-      session-name: Test Cluster
-      local-datacenter: datacenter1

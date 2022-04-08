@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.robin.ones.org.robin.ones.gasmanager.mapper.GasFillingRecordMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="GasFillingRecordMap" type="org.robin.ones.gasmanager.entity.GasFillingRecordEntity">
+        <id column="id" property="id"/>
+        <result column="gpid" property="gpid"/>
+        <result column="czdw" property="czdw"/>
+        <result column="czsj" property="czsj"/>
+        <result column="gpgg" property="gpgg"/>
+        <result column="czgg" property="czgg"/>
+        <result column="czjz" property="czjz"/>
+        <result column="czy" property="czy"/>
+        <result column="jcy" property="jcy"/>
+        <result column="czqh" property="czqh"/>
+        <result column="ftbm" property="ftbm"/>
+        <result column="czcs" property="czcs"/>
+        <result column="scczsj" property="scczsj"/>
+        <result column="bz" property="bz"/>
+    </resultMap>
+
+    <sql id="selectGasFillingRecordVo">
+        id, gpid, czdw, czsj, gpgg, czgg, czjz, czy, jcy, czqh, ftbm, czcs, scczsj, bz
+    </sql>
+
+    <!--<select id="getGasFillingRecords" resultMap="GasFillingRecordMap">
+        SELECT a.*,b.xcjyrq as xcjyrq
+        FROM
+	    gas_fillingrecord a
+	    left join
+	    gas_lpgcylinder b
+	    on a.gpid = b.id
+    </select>-->
+</mapper>
